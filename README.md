@@ -1,6 +1,6 @@
 # MD5 light
 
-A simple web API for computing MD5 hash of an arbitrary file on the Internet. If email provided *attempts* (i.e. no indication if sending fails) to send the result via SMTP.
+A simple web API for computing MD5 hash of an arbitrary file on the Internet. If email provided *attempts* (i.e. no indication if sending fails) to send the result via SMTP. Returns results in a convenient json-compatible format.
 Has only 2 dependencies (apart from standard library).
 
 ## Installation
@@ -10,6 +10,7 @@ Redis (5.0.0) should be installed before using the software. Instructions at [re
 Also virtualenv package is needed to set up appropriate environment. Instructions [here](https://virtualenv.pypa.io/en/stable/installation/).
 
 
+    # inside cloned repo:
     $ virtualenv -p python3.6 <path_to_desired_env_dir>
     $ source <path_to_env_dir>/bin/activate
     $ pip install -r requirements.txt
@@ -20,7 +21,7 @@ Launch `md5light.py`:
 
     $ python md5light.py
 
-Use either browser (Firefox 63.0 was tested, issues are known with Chrome) or another Terminal window and `curl` to interact with the API.
+Use either browser (Firefox 63.0 was tested, issues are known with Chrome) or another Terminal window and `curl` to interact with the API. (the default address is http://localhost:48777)
 
 ## Notes
 
