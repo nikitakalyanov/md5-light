@@ -23,6 +23,17 @@ Launch `md5light.py`:
 
 Use either browser (Firefox 63.0 was tested, issues are known with Chrome) or another Terminal window and `curl` to interact with the API. (the default address is http://localhost:48777)
 
+## Usage
+
+    $ curl -X POST -d "email=user@example.com&url=http://site.com/file.txt" http://localhost:48777/submit
+    {"id":"0e4fac17-f367-4807-8c28-8a059a2f82ac"}
+    
+    $ curl -X GET http://localhost:48777/check?0e4fac17-f367-4807-8c28-8a059a2f82ac
+    {"status":"running"}
+    
+    $ curl -X GET http://localhost:48777/check?0e4fac17-f367-4807-8c28-8a059a2f82ac
+    {"md5":"f4afe93ad799484b1d512cc20e93efd1", "status":"done", "url":"http://site.com/file.txt"}
+
 ## Notes
 
 Should **NOT** be used publicly as only basic security checks are implemented in python http.server.HTTPserver class.
